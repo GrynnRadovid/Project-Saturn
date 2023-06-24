@@ -1,53 +1,49 @@
 import React, { useState } from "react";
-import "./LoginScreen.css";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import './App.css';
+import { Login } from "./Login";
+import { Register } from "./Register";
+
+
+function MainPage() {
+  return (
+    <div>
+      <h1>Main Page</h1>
+      {/* Add your main page content here */}
+    </div>
+  );
+}
 
 function LoginScreen() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentForm, setCurrentForm] = useState('login');
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleLogin = () => {
+    setIsLoggedIn(true);
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Add your authentication logic here
+  const toggleForm = (formName) => {
+    setCurrentForm(formName);
   };
 
   return (
-    <div className="login-container">
-      <h2 className="login-heading">Login</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username" className="login-label">
-          Username:
-        </label>
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={handleUsernameChange}
-          placeholder="Enter your username"
-          className="login-input"
-        />
-
-        <label htmlFor="password" className="login-label">
-          Password:
-        </label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={handlePasswordChange}
-          placeholder="Enter your password"
-          className="login-input"
-        />
-
-        <button type="submit" className="login-button">Login</button>
-      </form>
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route path="/register" element={<Register onFormSwitch={toggleForm} />} />
+          <Route
+            path="/"
+            element={
+              isLoggedIn ? (
+                <MainPage />
+              ) : (
+                <Navigate to="/login" replace={true} />
+              )
+            }
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }

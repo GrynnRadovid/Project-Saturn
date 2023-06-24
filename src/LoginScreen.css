@@ -2,42 +2,64 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
-    background-color: #f1f1f1;
+    height: 80vh;
+    background-image: url('LoginScreen.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 20px;
   }
+
+  .header-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
   
+  .header-heading {
+    color: #ffffff;
+  }
+  
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .login-container {
     width: 400px;
-    background-color: #ffffff;
+    margin: 0 auto;
+    background-color: #292929;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: solid;
+    border-color: rgb(166, 14, 232) rgb(212, 145, 39) rgb(3, 162, 3) transparent;
   }
   
   .login-heading {
     text-align: center;
     margin-bottom: 20px;
+    color: #ffffff;
   }
   
   .login-label {
     display: block;
     margin-bottom: 10px;
+    color: #ffffff;
   }
   
   .login-input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 4px;
     box-sizing: border-box;
     margin-bottom: 20px;
+    background-color: #333333;
+    color: #ffffff;
   }
   
   .login-button {
     width: 100%;
     background-color: #4CAF50;
-    color: #fff;
+    color: #ffffff;
     padding: 10px;
     border: none;
     border-radius: 4px;
@@ -47,4 +69,12 @@ body {
   
   .login-button:hover {
     background-color: #45a049;
+  }
+  .create-account-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .create-account-text {
+    color: #ffffff;
   }
