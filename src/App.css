@@ -1,17 +1,42 @@
-
-.App {
-  text-align: center;
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.bkg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
   background-image: url('LoginScreen.jpg');
   background-size: cover;
-  background-repeat: repeat;  
+  z-index: -1;
 }
 
+.logo-container {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.logo-content {
+  width: 200px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+  background-image: url('saturn.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.LoginPage {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+}
 
 .auth-form-container, .login-form, .register-form {
   display: flex;
@@ -51,7 +76,7 @@ button {
   color: #7439db;
 }
 
-.link-btn {
+  .link-btn {
   background: none;
   color: white;
   text-decoration: underline;

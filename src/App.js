@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import './App.css';
+
 import { Login } from "./Login";
 import { Register } from "./Register";
 
@@ -27,24 +27,23 @@ function LoginScreen() {
   };
 
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/login" element={<Login onLogin={handleLogin} />} />
-          <Route path="/register" element={<Register onFormSwitch={toggleForm} />} />
-          <Route
-            path="/"
-            element={
-              isLoggedIn ? (
-                <MainPage />
-              ) : (
-                <Navigate to="/login" replace={true} />
-              )
-            }
-          />
-        </Routes>
-      </Router>
-    </div>
+    
+        <Router>
+          <Routes>
+            <Route path="/login" element={<Login onLogin={handleLogin} />} />
+            <Route path="/register" element={<Register onFormSwitch={toggleForm} />} />
+            <Route
+              path="/"
+              element={
+                isLoggedIn ? (
+                  <MainPage />
+                ) : (
+                  <Navigate to="/login" replace={true} />
+                )
+              }
+            />
+          </Routes>
+        </Router>
   );
 }
 
